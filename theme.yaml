@@ -1,0 +1,10 @@
+name: bedandboardgames
+license: proprietary
+description: Theme for bedandboardgames
+tags:
+  - contact form
+  - blog
+features:
+  - blog
+  - contact form
+min_version: 0.79
