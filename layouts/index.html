@@ -31,7 +31,9 @@
 					<h4 class="subtitle">{{ . }}</h4>
 					{{ end }}
 					{{ .Content }}
+					{{ if eq .Params.button true }}
 					{{ partial "events-button" . }}
+					{{ end }}
 				</div>
 
 			</div>

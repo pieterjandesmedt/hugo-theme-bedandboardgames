@@ -51,11 +51,12 @@
 					{{ end }} {{ end }} {{ end }}
 				</div>
 			</div>
-
 			{{ partial "article-tags" . }}
 			{{ if ne (.Page.RelPermalink) "/static/volgende-events/" }}
 			<div class="mt-6">
-			{{ partial "events-button" . }}
+				{{ if eq .Params.button true }}
+				{{ partial "events-button" . }}
+				{{ end }}
 			</div>
 			{{ end }}
 			</div>
