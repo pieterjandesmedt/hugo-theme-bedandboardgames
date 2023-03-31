@@ -83,7 +83,7 @@
 			const events = await fetchEvents();
 			try {
 				const elem = document.getElementById('weekends');
-				if (events.length > 0) elem.innerHTML = events.map(eventToHtml);
+				if (events.length > 0) elem.innerHTML = events.map(eventToHtml).join('');
 				else elem.innerHTML = 'Er zijn geen volgende events.';
 			} catch (err) {
 				console.error(err);
@@ -97,10 +97,10 @@
 			{ icon: 'fas fa-check', color: 'success', 'text': 'Vrij' };
 			return `
 <a href="mailto:${createMailTo(event)}">
-<div class="card has-background-info-light">
+<div class="card has-background-info-light mb-3">
   <div class="card-content">
     <div class="content">
-      <h3 class="title">${event?.startDate} tot ${event?.endDate}</h3>
+      <h5 class="title mb-2">${event?.startDate} tot ${event?.endDate}</h3>
 		<span class="icon-text">
 			<span class="icon has-text-${reserved.color}" style="display: inline-block !important"><i class="${reserved.icon}"></i></span>
 			<span class="has-text-${reserved.color}">${reserved.text}</span>
