@@ -94,10 +94,10 @@
 
 		function eventToHtml(event = {}) {
 			const reserved = event.isReserved ?
-			{ icon: 'fas fa-xmark', color: 'danger', 'text': 'Gereserveerd' }:
-			{ icon: 'fas fa-check', color: 'success', 'text': 'Vrij' };
+			{ icon: 'mdi mdi-close', color: 'danger', 'text': 'Gereserveerd' }:
+			{ icon: 'mdi mdi-check', color: 'success', 'text': 'Vrij' };
 			return `
-<a href="mailto:${createMailTo(event)}">
+${!event.isReserved ? `<a href="mailto:${createMailTo(event)}">`: ``}
 <div class="card has-background-info-light mb-3">
   <div class="card-content">
     <div class="content">
@@ -109,7 +109,8 @@
     </div>
   </div>
 </div>
-</a>`;
+${!event.isReserved ? `</a>`: ``}
+`;
 			// return `<pre>${JSON.stringify(event, null, 2)}</pre>`;
 		}
 
